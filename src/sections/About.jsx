@@ -38,28 +38,37 @@ const traits = [
 ]
 
 const skills = [
-  { label: 'Python / FastAPI', pct: 82 },
-  { label: 'APIs REST & JWT', pct: 78 },
-  { label: 'MySQL / SQL', pct: 75 },
-  { label: 'Power BI / Dashboards', pct: 70 },
-  { label: 'Git / GitHub', pct: 80 },
-  { label: 'Linux / Bash', pct: 65 },
+  { label: 'Python / FastAPI' },
+  { label: 'APIs REST & JWT' },
+  { label: 'MySQL / SQL' },
+  { label: 'Power BI / Dashboards' },
+  { label: 'Git / GitHub' },
+  { label: 'Linux / Bash' },
 ]
 
-function SkillBar({ label, pct, delay }) {
+function SkillBar({ label, delay }) {
   const [ref, inView] = useInView()
+
   return (
     <div ref={ref}>
-      <div className="flex justify-between text-sm mb-1.5">
-        <span className="text-white/70 font-medium">{label}</span>
-        <span className="font-mono text-blue-400 text-xs">{pct}%</span>
+      <div className="flex items-center gap-3 mb-2">
+        <div className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.9)]" />
+
+        <span className="text-white/70 font-medium">
+          {label}
+        </span>
       </div>
+
       <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
         <motion.div
-          className="h-full bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"
+          className="h-full bg-gradient-to-r from-blue-500 via-cyan-400 to-purple-500 rounded-full"
           initial={{ width: 0 }}
-          animate={inView ? { width: `${pct}%` } : { width: 0 }}
-          transition={{ duration: 1.2, delay, ease: [0.22, 1, 0.36, 1] }}
+          animate={inView ? { width: '100%' } : { width: 0 }}
+          transition={{
+            duration: 1.2,
+            delay,
+            ease: [0.22, 1, 0.36, 1],
+          }}
         />
       </div>
     </div>

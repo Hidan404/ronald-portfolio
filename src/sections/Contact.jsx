@@ -9,8 +9,8 @@ const socials = [
   {
     icon: SiGithub,
     label: 'GitHub',
-    handle: '@ronalddev',
-    href: 'https://github.com',
+    handle: '@Hidan404',
+    href: 'https://github.com/Hidan404',
     color: 'text-white/70',
     bg: 'bg-white/5',
     border: 'border-white/10',
@@ -19,8 +19,8 @@ const socials = [
   {
     icon: SiLinkedin,
     label: 'LinkedIn',
-    handle: 'ronald-backend',
-    href: 'https://linkedin.com',
+    handle: 'ronaldousadev',
+    href: 'www.linkedin.com/in/ronaldousadev',
     color: 'text-blue-400',
     bg: 'bg-blue-500/8',
     border: 'border-blue-500/20',
@@ -29,8 +29,8 @@ const socials = [
   {
     icon: SiWhatsapp,
     label: 'WhatsApp',
-    handle: '+55 (xx) 9xxxx-xxxx',
-    href: 'https://wa.me/55xx',
+    handle: '+55 (94) 99144-4502',
+    href: 'https://wa.me/5594991444502',
     color: 'text-green-400',
     bg: 'bg-green-500/8',
     border: 'border-green-500/20',
@@ -46,14 +46,39 @@ export default function Contact() {
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
+  const handleSubmit = async (e) => {
+  e.preventDefault()
+
+  setLoading(true)
+
+  try {
+    const response = await fetch('https://formspree.io/f/xrbzkazw', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(form),
+    })
+
+    if (response.ok) {
       setSent(true)
-    }, 1500)
+
+      setForm({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      })
+    } else {
+      alert('Erro ao enviar mensagem.')
+    }
+  } catch (error) {
+    alert('Erro ao enviar formulário.')
+  } finally {
+    setLoading(false)
   }
+}
 
   return (
     <section id="contato" className="relative py-28 overflow-hidden">
@@ -97,8 +122,8 @@ export default function Contact() {
               </div>
               <div>
                 <div className="text-white/40 text-xs font-mono mb-0.5">Email</div>
-                <a href="mailto:contato@ronald.dev" className="text-white/80 hover:text-blue-400 transition-colors font-medium">
-                  contato@ronald.dev
+                <a href="mailto:ronald.dev404@gmail.com" className="text-white/80 hover:text-blue-400 transition-colors font-medium">
+                  ronald.dev404@gmail.com
                 </a>
               </div>
             </div>

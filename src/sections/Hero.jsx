@@ -53,7 +53,7 @@ function TerminalWidget() {
   )
 }
 
-function StatsRow() {
+/*function StatsRow() {
   const stats = [
     { value: '12+', label: 'APIs desenvolvidas' },
     { value: '30+', label: 'Automações criadas' },
@@ -75,7 +75,7 @@ function StatsRow() {
     </div>
   )
 }
-
+*/
 export default function Hero() {
   const [wordIdx, setWordIdx] = useState(0)
 
@@ -205,7 +205,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <StatsRow />
+        
       </div>
 
       {/* Scroll indicator */}
