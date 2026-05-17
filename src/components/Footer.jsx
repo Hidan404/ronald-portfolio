@@ -13,9 +13,9 @@ export default function Footer() {
         </div>
         <div className="flex items-center gap-1">
           {[
-            { icon: SiGithub, href: 'https://github.com' },
-            { icon: FaLinkedinIn, href: 'https://linkedin.com' },
-            { icon: SiWhatsapp, href: '#' },
+            { icon: SiGithub, href: 'https://github.com/Hidan404' },
+            { icon: FaLinkedinIn, href: 'https://www.linkedin.com/in/ronaldousadev' },
+            { icon: SiWhatsapp, href: 'https://wa.me/5594991444502' },
           ].map(({ icon: Icon, href }, i) => (
             <a
               key={i}
@@ -29,7 +29,7 @@ export default function Footer() {
           ))}
         </div>
         <div className="text-white/20 text-xs font-mono">
-          © {new Date().getFullYear()} · Feito com Python 🐍
+          © {new Date().getFullYear()} · Feito com React ⚛️ + Vite ⚡
         </div>
       </div>
     </footer>
