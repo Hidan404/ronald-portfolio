@@ -11,71 +11,93 @@ const fadeUp = (delay = 0) => ({
 
 const typewords = ['Backend Developer', 'Python Engineer', 'API Architect', 'Automation Expert']
 
-function TerminalWidget() {
-  const lines = [
-    { text: '$ python main.py --start', color: 'text-blue-400', delay: 0 },
-    { text: '→ FastAPI server running on :8000', color: 'text-green-400', delay: 0.4 },
-    { text: '→ Connected to MySQL database', color: 'text-green-400', delay: 0.8 },
-    { text: '→ 847 endpoints registered', color: 'text-cyan-400', delay: 1.2 },
-    { text: '→ JWT auth middleware loaded', color: 'text-purple-400', delay: 1.6 },
-    { text: '→ All systems operational ✓', color: 'text-emerald-400', delay: 2.0 },
-  ]
-
+function ProfileWidget() {
   return (
-    <div className="glass-card rounded-xl p-5 font-mono text-xs w-full max-w-sm border border-white/5">
-      {/* Window bar */}
-      <div className="flex items-center gap-1.5 mb-4">
-        <div className="w-3 h-3 rounded-full bg-red-500/70" />
-        <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
-        <div className="w-3 h-3 rounded-full bg-green-500/70" />
-        <span className="ml-2 text-white/20 text-[10px] tracking-wide">terminal — python</span>
+    <div className="relative w-full max-w-sm mx-auto">
+      {/* Glow background */}
+      <div className="absolute inset-0 bg-cyan-500/20 blur-3xl rounded-full scale-90" />
+
+      {/* Card */}
+      <div className="relative glass-card border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl">
+        
+        {/* Top gradient */}
+        <div className="h-24 bg-gradient-to-r from-cyan-500/30 via-blue-500/20 to-purple-500/30" />
+
+        {/* Photo */}
+        <div className="relative flex justify-center -mt-14">
+          <div className="relative group">
+            
+            {/* Glow ring */}
+            <div className="absolute inset-0 rounded-full bg-cyan-400/30 blur-xl scale-110 group-hover:scale-125 transition-all duration-500" />
+
+            <img
+              src="/images/ronald.jpg"
+              alt="Ronald Sousa"
+              className="
+                relative
+                w-40 h-40
+                md:w-52 md:h-52
+                rounded-full
+                object-cover
+                border-4
+                border-[#0f172a]
+                shadow-2xl
+                group-hover:scale-105
+                transition-all
+                duration-500
+              "
+            />
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="px-6 pb-6 pt-4 text-center">
+          
+          <h3 className="text-white text-xl font-bold">
+            Ronald Sousa
+          </h3>
+
+          <p className="text-cyan-400 text-sm font-mono mt-1">
+            Backend Developer • Python • FastAPI
+          </p>
+
+          <p className="text-slate-400 text-sm leading-relaxed mt-4">
+            Desenvolvedor focado em APIs REST, automação,
+            Linux e sistemas backend modernos com Python.
+          </p>
+
+          {/* Tech badges */}
+          <div className="flex flex-wrap justify-center gap-2 mt-5">
+            {[
+              'FastAPI',
+              'Python',
+              'Docker',
+              'Linux',
+              'MySQL'
+            ].map((tech) => (
+              <span
+                key={tech}
+                className="
+                  px-3 py-1
+                  rounded-full
+                  text-xs
+                  font-mono
+                  bg-cyan-500/10
+                  text-cyan-300
+                  border border-cyan-500/20
+                "
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
-      {lines.map((line, i) => (
-        <motion.div
-          key={i}
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: line.delay + 0.8, duration: 0.4 }}
-          className={`${line.color} mb-1.5 leading-relaxed`}
-        >
-          {line.text}
-        </motion.div>
-      ))}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.4 }}
-        className="text-blue-400 mt-2"
-      >
-        $ <span className="cursor-blink">▋</span>
-      </motion.div>
     </div>
   )
 }
 
-/*function StatsRow() {
-  const stats = [
-    { value: '12+', label: 'APIs desenvolvidas' },
-    { value: '30+', label: 'Automações criadas' },
-    { value: '99.8%', label: 'Uptime médio' },
-    { value: '8+', label: 'Integrações ativas' },
-  ]
-  return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-      {stats.map((s, i) => (
-        <motion.div
-          key={i}
-          {...fadeUp(0.9 + i * 0.1)}
-          className="glass-card rounded-xl p-4 border border-white/5 text-center group hover:border-blue-500/20 transition-all duration-300"
-        >
-          <div className="text-2xl font-bold text-gradient-blue font-mono">{s.value}</div>
-          <div className="text-white/40 text-xs mt-1">{s.label}</div>
-        </motion.div>
-      ))}
-    </div>
-  )
-}
-*/
+
 export default function Hero() {
   const [wordIdx, setWordIdx] = useState(0)
 
@@ -171,37 +193,10 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col gap-4 lg:items-end animate-float"
           >
-            <TerminalWidget />
+            <ProfileWidget />
 
             {/* Mini API diagram */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2 }}
-              className="glass-card border border-white/5 rounded-xl p-4 w-full max-w-sm"
-            >
-              <div className="text-[10px] font-mono text-white/30 mb-3 uppercase tracking-widest">API Request Flow</div>
-              <div className="flex items-center justify-between text-xs font-mono">
-                {['Client', '→', 'FastAPI', '→', 'MySQL', '→', 'Response'].map((item, i) => (
-                  <span key={i} className={
-                    item === '→' ? 'text-blue-500/50' :
-                    i === 0 ? 'text-white/50' :
-                    i === 2 ? 'text-green-400/80' :
-                    i === 4 ? 'text-blue-400/80' :
-                    i === 6 ? 'text-emerald-400/80' : 'text-white/50'
-                  }>{item}</span>
-                ))}
-              </div>
-              <div className="mt-3 h-0.5 bg-white/5 rounded-full overflow-hidden">
-                <motion.div
-                  className="h-full bg-gradient-to-r from-blue-500 via-cyan-400 to-emerald-400 rounded-full"
-                  initial={{ width: '0%' }}
-                  animate={{ width: '100%' }}
-                  transition={{ delay: 1.5, duration: 1.5, ease: 'easeInOut', repeat: Infinity, repeatDelay: 2 }}
-                />
-              </div>
-              <div className="mt-2 text-[10px] font-mono text-green-400/60">200 OK · 47ms avg latency</div>
-            </motion.div>
+            
           </motion.div>
         </div>
 

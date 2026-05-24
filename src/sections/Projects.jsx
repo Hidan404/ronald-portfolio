@@ -6,77 +6,203 @@ import { SiGithub } from 'react-icons/si'
 const projects = [
   {
     id: 1,
-    title: 'FastAPI Auth Service',
+
+    title: 'API Mangás & Livros',
+
     image: '/images/api_manga_livros.png',
-    desc: 'Microserviço de autenticação com JWT, refresh tokens, roles e middleware de permissões. Pronto para integrar em qualquer sistema empresarial.',
-    tags: ['Python', 'FastAPI', 'JWT', 'MySQL', 'Docker'],
+
+    desc: 'API REST desenvolvida com FastAPI para gerenciamento de mangás e livros, incluindo autenticação JWT, cadastro de usuários, sistema de favoritos, categorias e documentação interativa via Swagger.',
+
+    tags: [
+      'Python',
+      'FastAPI',
+      'JWT',
+      'MySQL',
+      'SQLAlchemy',
+      'Docker'
+    ],
+
     category: 'API REST',
+
     color: 'blue',
+
     status: 'Concluído',
-    highlights: ['Autenticação JWT', 'Refresh tokens', 'Rate limiting', 'Swagger UI'],
-    github: '#',
+    highlights: [
+      'Autenticação JWT',
+      'CRUD completo',
+      'Swagger UI',
+      'Sistema de favoritos'
+    ],
+
+    github: 'https://github.com/Hidan404/ronald-portfolio',
+
     demo: 'https://api-manga-livros.onrender.com/docs',
   },
   {
-    id: 2,
-    title: 'Data Pipeline ETL',
-    desc: 'Pipeline de extração, transformação e carga de dados de múltiplas fontes (APIs externas + CSV) para MySQL, com agendamento automático via cron.',
-    tags: ['Python', 'Pandas', 'MySQL', 'Requests', 'Cron'],
-    category: 'Automação',
-    color: 'cyan',
-    status: 'Concluído',
-    highlights: ['ETL automatizado', 'Multi-source', 'Logging', 'Retry logic'],
-    github: '#',
-    demo: '#',
-  },
-  {
-    id: 3,
-    title: 'Dashboard Analytics API',
-    desc: 'API backend para geração de relatórios e dashboards em tempo real. Integração com Power BI via REST endpoints JSON com filtros avançados.',
-    tags: ['Python', 'FastAPI', 'MySQL', 'Power BI', 'Charts'],
-    category: 'Analytics',
-    color: 'purple',
-    status: 'Concluído',
-    highlights: ['Power BI integration', 'Cache Redis', 'Filtros dinâmicos', 'Export PDF'],
-    github: '#',
-    demo: '#',
-  },
-  {
-    id: 4,
-    title: 'Sistema de Monitoramento',
-    desc: 'Bot Python que monitora endpoints e serviços 24/7, envia alertas via webhook (Telegram/Slack) e gera relatórios de uptime automáticos.',
-    tags: ['Python', 'aiohttp', 'Asyncio', 'Telegram Bot', 'SQLite'],
-    category: 'DevOps',
-    color: 'green',
-    status: 'Ativo',
-    highlights: ['99.9% uptime track', 'Alertas em tempo real', 'Dashboard web', 'Histórico'],
-    github: '#',
-    demo: '#',
-  },
-  {
-    id: 5,
-    title: 'API Gateway Integrador',
-    desc: 'Gateway que padroniza e integra múltiplas APIs de terceiros (pagamento, CEP, NF-e) em uma interface unificada com cache e retry automático.',
-    tags: ['Python', 'FastAPI', 'Redis', 'httpx', 'Pydantic'],
-    category: 'Integração',
-    color: 'orange',
-    status: 'Concluído',
-    highlights: ['Multi-API', 'Redis cache', 'Retry exponencial', 'Documentação auto'],
-    github: '#',
-    demo: '#',
-  },
-  {
-    id: 6,
-    title: 'Automação de Relatórios',
-    desc: 'Script Python que coleta dados de sistemas legados (SQL), gera relatórios Excel formatados e os envia automaticamente por e-mail via agendamento.',
-    tags: ['Python', 'openpyxl', 'MySQL', 'smtplib', 'Schedule'],
-    category: 'Automação',
-    color: 'yellow',
-    status: 'Em Produção',
-    highlights: ['Excel formatado', 'E-mail automático', 'Múltiplos destinatários', 'Log de envios'],
-    github: '#',
-    demo: '#',
-  },
+      id: 2,
+
+      title: 'DevTrack API',
+
+      image: '/images/27277.jpg',
+
+      desc: 'Sistema backend para gerenciamento de estudos e progresso de desenvolvedores, com autenticação JWT, metas diárias e estatísticas de aprendizado.',
+
+      tags: [
+        'Python',
+        'FastAPI',
+        'JWT',
+        'MySQL'
+      ],
+
+      category: 'Backend',
+
+      color: 'cyan',
+
+      status: 'Em Desenvolvimento',
+
+      highlights: [
+        'Metas de estudo',
+        'Autenticação JWT',
+        'Dashboard de progresso',
+        'API REST'
+      ],
+
+      github: '#',
+
+      demo: '#',
+    },
+    {
+      id: 3,
+
+      title: 'Anime & Manga Tracker',
+
+      image: '/images/27277.jpg',
+
+      desc: 'Plataforma para organização de mangás e animes favoritos com sistema de listas, notas, progresso de leitura e recomendações.',
+
+      tags: [
+        'FastAPI',
+        'Python',
+        'MySQL',
+        'Docker'
+      ],
+
+      category: 'Fullstack',
+
+      color: 'purple',
+
+      status: 'Planejado',
+
+      highlights: [
+        'Sistema de favoritos',
+        'Progresso de leitura',
+        'API própria',
+        'Recomendações'
+      ],
+
+      github: '#',
+
+      demo: '#',
+    },
+    {
+      id: 4,
+
+      title: 'Linux Server Monitor',
+
+      image: '/images/27277.jpg',
+
+      desc: 'Ferramenta de monitoramento para servidores Linux com métricas de CPU, RAM, disco e alertas em tempo real.',
+
+      tags: [
+        'Python',
+        'Linux',
+        'DevOps',
+        'Monitoring'
+      ],
+
+      category: 'DevOps',
+
+      color: 'green',
+
+      status: 'Em Breve',
+
+      highlights: [
+        'Monitoramento Linux',
+        'Logs em tempo real',
+        'Alertas automáticos',
+        'Dashboard web'
+      ],
+
+      github: '#',
+
+      demo: '#',
+    },
+    {
+      id: 5,
+
+      title: 'API de Automação Financeira',
+
+      image: '/images/27277.jpg',
+
+      desc: 'API para controle financeiro pessoal com categorização automática de despesas, relatórios e exportação de dados.',
+
+      tags: [
+        'Python',
+        'FastAPI',
+        'MySQL',
+        'Docker'
+      ],
+
+      category: 'API REST',
+
+      color: 'orange',
+
+      status: 'Planejado',
+
+      highlights: [
+        'Controle financeiro',
+        'Relatórios',
+        'Exportação Excel',
+        'JWT Auth'
+      ],
+
+      github: '#',
+
+      demo: '#',
+    },
+    {
+      id: 6,
+
+      title: 'Gerador de Relatórios Inteligentes',
+
+      image: '/images/27277.jpg',
+
+      desc: 'Sistema automatizado para geração de relatórios PDF e Excel a partir de bancos de dados e APIs externas.',
+
+      tags: [
+        'Python',
+        'Automation',
+        'PDF',
+        'Excel'
+      ],
+
+      category: 'Automação',
+
+      color: 'yellow',
+
+      status: 'Em Desenvolvimento',
+
+      highlights: [
+        'PDF automático',
+        'Excel formatado',
+        'Integração SQL',
+        'Envio por e-mail'
+      ],
+
+      github: '#',
+
+      demo: '#',
+    },
 ]
 
 const colorMap = {
@@ -125,9 +251,8 @@ function ProjectCard({ project, delay }) {
           className={`absolute top-3 right-3 flex items-center gap-1.5 glass border border-white/10 rounded-full px-2.5 py-1 text-[10px] font-mono ${statusColor[project.status]}`}
         >
           <span
-            className={`w-1.5 h-1.5 rounded-full ${c.dot} ${
-              project.status === 'Em Produção' ? 'animate-pulse' : ''
-            }`}
+            className={`w-1.5 h-1.5 rounded-full ${c.dot} ${project.status === 'Em Produção' ? 'animate-pulse' : ''
+              }`}
           />
           {project.status}
         </div>
@@ -160,11 +285,11 @@ function ProjectCard({ project, delay }) {
 
         {/* Actions */}
         <div className="flex gap-2 mt-auto">
-          <a href={project.github} className="flex items-center gap-1.5 px-4 py-2 glass-card border border-white/8 rounded-lg text-white/60 hover:text-white text-sm font-medium transition-all duration-300 hover:border-white/15 flex-1 justify-center">
+          <a href={project.github} target='_blank' className="flex items-center gap-1.5 px-4 py-2 glass-card border border-white/8 rounded-lg text-white/60 hover:text-white text-sm font-medium transition-all duration-300 hover:border-white/15 flex-1 justify-center">
             <SiGithub className="text-base" />
             GitHub
           </a>
-          <a href={project.demo} className={`flex items-center gap-1.5 px-4 py-2 ${c.bg} border ${c.border} rounded-lg text-sm font-medium transition-all duration-300 hover:brightness-110 flex-1 justify-center`} style={{ color: 'rgb(255 255 255 / 0.8)' }}>
+          <a href={project.demo} target='_blank' className={`flex items-center gap-1.5 px-4 py-2 ${c.bg} border ${c.border} rounded-lg text-sm font-medium transition-all duration-300 hover:brightness-110 flex-1 justify-center`} style={{ color: 'rgb(255 255 255 / 0.8)' }}>
             <HiExternalLink className="text-base" />
             Demo
           </a>

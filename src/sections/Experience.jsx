@@ -4,20 +4,27 @@ import { HiOfficeBuilding, HiAcademicCap, HiBriefcase } from 'react-icons/hi'
 
 const timeline = [
   {
-    type: 'work',
-    icon: HiOfficeBuilding,
-    title: 'Operador de Sistemas',
-    company: 'Empresa de Infraestrutura',
-    period: '2022 — Presente',
-    color: 'blue',
-    desc: 'Monitoramento contínuo de sistemas críticos, garantindo estabilidade operacional e resposta rápida a incidentes. Suporte técnico de nível 1 e 2 com foco em resolução definitiva de problemas.',
-    achievements: [
-      'Monitoramento 24/7 de ambientes de produção',
-      'Redução de tempo de resolução de incidentes em 35%',
-      'Documentação de procedimentos e runbooks operacionais',
-      'Suporte técnico a sistemas backend e infraestrutura',
-    ],
-  },
+  type: 'work',
+
+  icon: HiOfficeBuilding,
+
+  title: 'Operador de Sistemas',
+
+  company: 'Mix Mateus Varejista',
+
+  period: '10/2020 — 07/2024',
+
+  color: 'blue',
+
+  desc: 'Atuação no suporte e monitoramento de sistemas operacionais da empresa, prestando suporte técnico, acompanhamento de processos internos e resolução de incidentes operacionais.',
+
+  achievements: [
+    'Suporte técnico operacional',
+    'Monitoramento de sistemas internos',
+    'Atendimento e resolução de incidentes',
+    'Apoio em processos e infraestrutura'
+  ],
+},
   {
     type: 'study',
     icon: HiAcademicCap,
@@ -38,7 +45,7 @@ const timeline = [
     icon: HiBriefcase,
     title: 'Freelancer — Automações e Backend',
     company: 'Projetos Independentes',
-    period: '2024 — Presente',
+    period: '2026 — Presente',
     color: 'cyan',
     desc: 'Desenvolvimento de soluções backend, automações Python e integrações de API para clientes e projetos pessoais. Foco em entrega de qualidade e soluções que realmente funcionam em produção.',
     achievements: [
