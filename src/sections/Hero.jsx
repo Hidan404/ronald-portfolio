@@ -146,11 +146,25 @@ export default function Hero() {
             </motion.div>
 
             {/* Description */}
-            <motion.p {...fadeUp(0.4)} className="text-slate-400 text-lg leading-relaxed max-w-lg mb-8">
-              Especializado em construir <span className="text-white/80 font-medium">APIs escaláveis</span>, 
-              {' '}<span className="text-white/80 font-medium">automações Python</span> e 
-              {' '}<span className="text-white/80 font-medium">integrações de sistemas</span> para 
-              empresas que precisam de soluções robustas e eficientes.
+            <motion.p
+              {...fadeUp(0.4)}
+              className="text-slate-400 text-lg leading-relaxed max-w-lg mb-8"
+            >
+              Desenvolvedor backend focado em 
+              {' '}<span className="text-white/80 font-medium">
+                Python e FastAPI
+              </span>, 
+              criando {' '}
+              <span className="text-white/80 font-medium">
+                APIs REST
+              </span>, 
+              {' '}<span className="text-white/80 font-medium">
+                automações
+              </span> e 
+              {' '}<span className="text-white/80 font-medium">
+                sistemas voltados para produtividade
+              </span>, 
+              com experiência prática em suporte operacional, monitoramento e ambientes Linux.
             </motion.p>
 
             {/* Tech badges */}
