@@ -7,6 +7,7 @@ const projects = [
   {
     id: 1,
     title: 'FastAPI Auth Service',
+    image: '/images/api_manga_livros.png',
     desc: 'Microserviço de autenticação com JWT, refresh tokens, roles e middleware de permissões. Pronto para integrar em qualquer sistema empresarial.',
     tags: ['Python', 'FastAPI', 'JWT', 'MySQL', 'Docker'],
     category: 'API REST',
@@ -14,7 +15,7 @@ const projects = [
     status: 'Concluído',
     highlights: ['Autenticação JWT', 'Refresh tokens', 'Rate limiting', 'Swagger UI'],
     github: '#',
-    demo: '#',
+    demo: 'https://api-manga-livros.onrender.com/docs',
   },
   {
     id: 2,
@@ -109,20 +110,25 @@ function ProjectCard({ project, delay }) {
       <div className={`h-0.5 w-full ${c.accent} opacity-60`} />
 
       {/* Fake thumbnail */}
-      <div className={`relative h-36 ${c.bg} flex items-center justify-center border-b border-white/5 overflow-hidden`}>
-        {/* Abstract grid visual */}
-        <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-30" />
-        <div className="relative font-mono text-xs text-left w-4/5">
-          <div className="text-white/20 mb-1"># {project.category}</div>
-          <div className="text-green-400/70">{'@router.get("/api/v1/{...}")'}</div>
-          <div className="text-white/40">async def handler(</div>
-          <div className="text-blue-400/60 pl-4">db: Session = Depends(...)</div>
-          <div className="text-white/40">):</div>
-          <div className="text-purple-400/60 pl-4">return await service.run()</div>
-        </div>
+      <div className="relative h-48 overflow-hidden border-b border-white/5">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
+
         {/* Status badge */}
-        <div className={`absolute top-3 right-3 flex items-center gap-1.5 glass border border-white/10 rounded-full px-2.5 py-1 text-[10px] font-mono ${statusColor[project.status]}`}>
-          <span className={`w-1.5 h-1.5 rounded-full ${c.dot} ${project.status === 'Em Produção' ? 'animate-pulse' : ''}`} />
+        <div
+          className={`absolute top-3 right-3 flex items-center gap-1.5 glass border border-white/10 rounded-full px-2.5 py-1 text-[10px] font-mono ${statusColor[project.status]}`}
+        >
+          <span
+            className={`w-1.5 h-1.5 rounded-full ${c.dot} ${
+              project.status === 'Em Produção' ? 'animate-pulse' : ''
+            }`}
+          />
           {project.status}
         </div>
       </div>
