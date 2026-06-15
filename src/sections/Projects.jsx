@@ -41,17 +41,18 @@ const projects = [
   {
       id: 2,
 
-      title: 'DevTrack API',
+      title: 'Controle de Despesas Pessoais',
 
       image: '/images/27277.jpg',
 
-      desc: 'Sistema backend para gerenciamento de estudos e progresso de desenvolvedores, com autenticação JWT, metas diárias e estatísticas de aprendizado.',
+      desc: 'Sistema para controle de despesas basicas via cli, feito usando padrão MVC ainda em desenvolvimento, pretendo adicionar mais funcionalidades salvamento de dados em rota unica,transformar em uma aplicação cli.',
 
       tags: [
         'Python',
-        'FastAPI',
-        'JWT',
-        'MySQL'
+        'json',
+        'pathlib',
+        'POO',
+        'MVc'
       ],
 
       category: 'Backend',
@@ -62,9 +63,9 @@ const projects = [
 
       highlights: [
         'Metas de estudo',
-        'Autenticação JWT',
-        'Dashboard de progresso',
-        'API REST'
+        'transformar em app',
+        'Dashboard de despesas em breve',
+        'App CLI'
       ],
 
       github: '#',
