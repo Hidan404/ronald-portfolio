@@ -43,7 +43,7 @@ const projects = [
 
       title: 'Controle de Despesas Pessoais',
 
-      image: '/images/27277.jpg',
+      image: '/images/controle_despesas.jpg',
 
       desc: 'Sistema para controle de despesas basicas via cli, feito usando padrão MVC ainda em desenvolvimento, pretendo adicionar mais funcionalidades salvamento de dados em rota unica,transformar em uma aplicação cli.',
 
