@@ -68,7 +68,7 @@ const projects = [
         'App CLI'
       ],
 
-      github: '#',
+      github: 'https://github.com/Hidan404/controle_despesas',
 
       demo: '#',
     },
